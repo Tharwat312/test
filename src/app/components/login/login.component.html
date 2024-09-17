@@ -1,0 +1,26 @@
+<div class="container bg-main-light p-3 rounded-4 my-4">
+    <h1 class="h2 text-main">Login</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginn()" >
+        <div class="my-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+                <div>
+                    <p class="alert alert-danger">Please enter a valid email</p>
+                </div>
+            }
+        </div>
+        <div class="my-3">
+            <label for="password">password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+
+        <div class="d-flex flex-column">
+            <button [disabled]="loginForm.invalid || loading" type="submit" class="btn-main mb-3">Login 
+                @if (loading) {<i class="fas fa-spin fa-spinner"></i>}
+            </button>
+            <a routerLink="/forgotPassword" class="cr text-decoration-underline">Forgot password?</a>
+        </div>
+    </form>
+</div>

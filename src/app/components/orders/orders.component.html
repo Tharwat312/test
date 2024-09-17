@@ -1,0 +1,19 @@
+<section class="mx-auto w-75 bg-main-light rounded-4 p-4 mt-4 mb-4 ">
+    <h1 class="mb-4">shipping details</h1>
+    <form [formGroup]="orders" (ngSubmit)="submitOrder()">
+        <div>
+            <label for="deatils" class="fw-bold">Details</label>
+            <textarea formControlName="details" id="details" class="form-control"></textarea>
+        </div>
+
+        <div>
+            <label class="my-1 fw-bold" for="phone">Phone</label>
+            <input formControlName="phone"  id="phone" name="tel" class="form-control" >
+        </div>
+        <div>
+            <label class="my-1 fw-bold" for="city">City</label>
+            <input formControlName="city" id="city" name="text" class="form-control" >
+        </div>
+        <button  class="btn-main mt-4" type="submit"> Check out</button>
+    </form>
+</section>
